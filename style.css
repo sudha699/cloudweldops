@@ -1,15 +1,15 @@
 /* Basic Reset & Typography */
 :root {
-    --primary-color: #007bff; /* A blue, similar to Palo Alto's primary blue */
+    --primary-color: #4285F4; /* Google Blue */
     --secondary-color: #6c757d; /* A subtle gray */
-    --accent-color: #28a745; /* Green for success/CTA */
+    --accent-color: #34A853; /* A complementary green */
     --text-color: #333;
     --heading-color: #1a1a1a;
     --light-gray-bg: #f8f9fa;
-    --dark-blue-bg: #212529; /* Dark background for sections */
+    --dark-blue-bg: #1A237E; /* Deep professional blue for dark sections */
     --white: #ffffff;
     --box-shadow-light: 0 4px 8px rgba(0,0,0,0.05);
-    --border-radius: 5px;
+    --border-radius: 8px; /* Slightly increased for modern look */
 }
 
 * {
@@ -19,7 +19,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* Similar to what Palo Alto might use */
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
@@ -59,12 +59,14 @@ p { margin-bottom: 1em; }
     text-align: center;
 }
 
+/* General Section Titles - Unified Styling */
 .section-title {
     font-size: 2.8em;
     text-align: center;
     margin-bottom: 60px;
     position: relative;
     padding-bottom: 15px;
+    color: var(--heading-color); /* Ensure consistent color */
 }
 
 .section-title::after {
@@ -75,7 +77,7 @@ p { margin-bottom: 1em; }
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Uses primary color */
     border-radius: 2px;
 }
 
@@ -100,6 +102,15 @@ p { margin-bottom: 1em; }
     border-radius: 2px;
 }
 
+/* Subtitle for sections (like services intro) */
+.section-subtitle {
+    font-size: 1.1em;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 60px auto; /* Center subtitle and add bottom margin */
+    line-height: 1.6;
+}
+
 
 /* Buttons */
 .btn {
@@ -107,7 +118,7 @@ p { margin-bottom: 1em; }
     padding: 12px 25px;
     border-radius: var(--border-radius);
     font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
     text-decoration: none;
     cursor: pointer;
 }
@@ -119,7 +130,8 @@ p { margin-bottom: 1em; }
 }
 
 .btn-primary:hover {
-    background-color: #0056b3; /* Darker blue */
+    background-color: #357ae8; /* Darker Google Blue */
+    border-color: #357ae8;
     transform: translateY(-2px);
     text-decoration: none;
 }
@@ -129,12 +141,12 @@ p { margin-bottom: 1em; }
     font-size: 1.1em;
     background-color: var(--primary-color);
     color: var(--white);
-    border: none;
+    border: none; /* No border for solid look */
     border-radius: 50px; /* More rounded for hero CTA */
 }
 
 .btn-primary-large:hover {
-    background-color: #0056b3;
+    background-color: #357ae8;
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
@@ -144,12 +156,14 @@ p { margin-bottom: 1em; }
     font-size: 1.1em;
     background-color: var(--white);
     color: var(--primary-color);
-    border: 2px solid var(--white);
-    border-radius: 50px;
+    border: 2px solid var(--primary-color); /* Border uses primary color now */
+    border-radius: 50px; /* Consistent rounded button */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-secondary-large:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--primary-color);
+    color: var(--white);
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
@@ -175,7 +189,7 @@ p { margin-bottom: 1em; }
 .header .logo {
     font-size: 1.8em;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Uses new primary color */
 }
 
 .header .nav ul {
@@ -194,20 +208,21 @@ p { margin-bottom: 1em; }
 }
 
 .header .nav a:hover {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Uses new primary color */
     text-decoration: none;
 }
 
 
 /* Hero Section */
 .hero-section {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1500x600/007bff/ffffff?text=CloudweldOps+Hero+Image'); /* Placeholder image, replace with your own */
+    /* Consider using a hero image with a Google Blue gradient overlay or abstract design */
+    background-image: linear-gradient(rgba(66, 133, 244, 0.6), rgba(66, 133, 244, 0.8)), url('https://via.placeholder.com/1500x600/4285F4/ffffff?text=CloudweldOps+Hero+Image'); /* Placeholder image, now with Google Blue overlay */
     background-size: cover;
     background-position: center;
     color: var(--white);
     text-align: center;
     padding: 120px 20px;
-    min-height: 600px; /* Ensure sufficient height */
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -269,7 +284,7 @@ p { margin-bottom: 1em; }
 
 .feature-item i {
     font-size: 3em;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Uses new primary color */
     margin-bottom: 15px;
 }
 
@@ -295,6 +310,7 @@ p { margin-bottom: 1em; }
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow-light);
     transition: transform 0.3s ease;
+    text-align: center; /* Center content */
 }
 
 .why-us-item:hover {
@@ -303,7 +319,7 @@ p { margin-bottom: 1em; }
 
 .why-us-item i {
     font-size: 2.5em;
-    color: var(--accent-color);
+    color: var(--accent-color); /* Uses accent color */
     margin-bottom: 15px;
 }
 
@@ -312,60 +328,84 @@ p { margin-bottom: 1em; }
     margin-bottom: 10px;
 }
 
-/* Services Section */
+/* NEW SERVICES SECTION STYLES */
 .services-section {
+    padding: 80px 0;
+    background-color: var(--white); /* Explicitly white */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between cards */
+}
+
+.service-card {
     background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    padding: 30px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Use flexbox for internal alignment */
+    flex-direction: column;
+    height: 100%; /* Ensure cards are same height in a row */
 }
 
-.service-category {
-    margin-bottom: 50px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #eee;
+.service-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.service-category:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-.service-category h3 {
-    font-size: 2em;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.service-category .service-description {
-    font-size: 1.1em;
+.service-card .service-icon {
+    font-size: 3em; /* Icon size */
+    color: var(--primary-color); /* Google Blue accent */
     margin-bottom: 20px;
-    color: var(--secondary-color);
+    text-align: center;
 }
 
-.service-category .service-list {
-    list-style: none;
+.service-card h3 {
+    font-size: 1.6em;
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    min-height: 50px; /* Ensure consistent heading height */
+}
+
+.service-card p {
+    font-size: 0.95em;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allow description to take up available space */
+}
+
+.service-details-list {
+    list-style: none; /* Remove default bullet points */
     padding: 0;
-    margin-left: 20px;
+    margin-top: auto; /* Push list to the bottom of the card */
 }
 
-.service-category .service-list li {
+.service-details-list li {
+    font-size: 0.9em;
+    color: var(--text-color);
     margin-bottom: 10px;
-    position: relative;
-    padding-left: 25px;
+    display: flex;
+    align-items: flex-start; /* Align text with checkmark */
 }
 
-.service-category .service-list li::before {
-    content: "\2022"; /* Bullet point */
-    color: var(--primary-color);
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-    position: absolute;
-    left: 0;
+.service-details-list li i {
+    color: var(--primary-color); /* Google Blue for checkmark icons */
+    margin-right: 10px;
+    font-size: 1.1em;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    margin-top: 3px; /* Adjust vertical alignment of checkmark */
 }
+/* END NEW SERVICES SECTION STYLES */
+
 
 /* Call to Action Section */
 .call-to-action {
-    background-color: var(--dark-blue-bg);
+    background-color: var(--dark-blue-bg); /* Deep professional blue */
     color: var(--white);
     text-align: center;
 }
@@ -393,6 +433,12 @@ p { margin-bottom: 1em; }
     max-width: 300px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.phase-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .phase-item h3 {
@@ -408,7 +454,7 @@ p { margin-bottom: 1em; }
 
 /* Footer */
 .footer {
-    background-color: var(--dark-blue-bg);
+    background-color: var(--dark-blue-bg); /* Deep professional blue */
     color: var(--white);
     padding: 40px 0 20px 0;
     font-size: 0.9em;
@@ -440,7 +486,7 @@ p { margin-bottom: 1em; }
 }
 
 .footer a {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Footer links use primary color */
     text-decoration: none;
 }
 
@@ -468,7 +514,6 @@ p { margin-bottom: 1em; }
         margin-bottom: 15px;
     }
 
-
     .hero-section h1 {
         font-size: 2.8em;
     }
@@ -480,10 +525,32 @@ p { margin-bottom: 1em; }
 
     .section-title, .section-title-white {
         font-size: 2em;
+        margin-bottom: 40px; /* Adjust spacing */
     }
 
-    .feature-grid, .why-us-grid, .phase-grid {
+    .section-title::after, .section-title-white::after {
+        width: 40px; /* Smaller underline */
+    }
+
+    .features-overview .section-title {
+        font-size: 2em; /* Smaller for this specific section */
+    }
+
+    .feature-grid, .why-us-grid, .services-grid, .phase-grid {
         grid-template-columns: 1fr; /* Stack items vertically */
+    }
+
+    .service-card {
+        padding: 25px; /* Slightly less padding on small screens */
+    }
+
+    .service-card h3 {
+        min-height: auto; /* Remove fixed height on mobile */
+    }
+
+    .cta-subtitle {
+        font-size: 1em;
+        margin-bottom: 30px;
     }
 
     .footer .footer-content {
@@ -498,4 +565,9 @@ p { margin-bottom: 1em; }
         padding: 12px 25px;
         font-size: 1em;
     }
+
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.5em; }
+    .section-padding { padding: 60px 0; }
 }

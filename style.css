@@ -5,8 +5,8 @@
     --accent-color: #34A853; /* A complementary green */
     --text-color: #333;
     --heading-color: #1a1a1a;
-    --light-gray-bg: #f8f9fa;
-    --dark-blue-bg: #1A237E; /* Deep professional blue for dark sections */
+    --light-gray-bg: #f8f9fa; /* Already defined and used for sections */
+    --dark-blue-bg: #1A237E; /* Deep professional blue for dark sections and some headings */
     --white: #ffffff;
     --box-shadow-light: 0 4px 8px rgba(0,0,0,0.05);
     --border-radius: 8px; /* Slightly increased for modern look */
@@ -22,7 +22,7 @@ body {
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--white);
+    background-color: var(--white); /* Main body background remains white */
 }
 
 .container {
@@ -66,7 +66,7 @@ p { margin-bottom: 1em; }
     margin-bottom: 60px;
     position: relative;
     padding-bottom: 15px;
-    color: var(--heading-color); /* Ensure consistent color */
+    color: var(--heading-color); /* Default color for section titles */
 }
 
 .section-title::after {
@@ -215,7 +215,6 @@ p { margin-bottom: 1em; }
 
 /* Hero Section */
 .hero-section {
-    /* Consider using a hero image with a Google Blue gradient overlay or abstract design */
     background-image: linear-gradient(rgba(66, 133, 244, 0.6), rgba(66, 133, 244, 0.8)), url('https://via.placeholder.com/1500x600/4285F4/ffffff?text=CloudweldOps+Hero+Image'); /* Placeholder image, now with Google Blue overlay */
     background-size: cover;
     background-position: center;
@@ -259,7 +258,11 @@ p { margin-bottom: 1em; }
 
 /* Features Overview */
 .features-overview {
-    background-color: var(--white);
+    background-color: var(--light-gray-bg); /* Changed background color */
+}
+
+.features-overview .section-title {
+    color: var(--dark-blue-bg); /* Changed title color */
 }
 
 .feature-grid {
@@ -331,7 +334,15 @@ p { margin-bottom: 1em; }
 /* NEW SERVICES SECTION STYLES */
 .services-section {
     padding: 80px 0;
-    background-color: var(--white); /* Explicitly white */
+    background-color: var(--light-gray-bg); /* Changed background color */
+}
+
+.services-section .section-title {
+    color: var(--dark-blue-bg); /* Changed title color */
+}
+
+.services-section .section-subtitle {
+    color: #444; /* Darker color for better contrast on light gray */
 }
 
 .services-grid {

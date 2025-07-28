@@ -331,7 +331,7 @@ p { margin-bottom: 1em; }
     margin-bottom: 10px;
 }
 
-/* NEW SERVICES SECTION STYLES */
+/* NEW SERVICES SECTION STYLES - Replaced with Option 2 */
 .services-section {
     padding: 80px 0;
     background-color: var(--light-gray-bg); /* Changed background color */
@@ -343,75 +343,76 @@ p { margin-bottom: 1em; }
 
 .services-section .section-subtitle {
     color: #444; /* Darker color for better contrast on light gray */
+    margin-bottom: 60px; /* Ensure sufficient space below subtitle */
 }
 
-.services-grid {
+.service-feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 30px; /* Space between cards */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 50px; /* Add some space from the subtitle */
 }
 
-.service-card {
+.feature-block {
     background-color: var(--white);
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
-    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    padding: 40px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Use flexbox for internal alignment */
+    border-top: 5px solid var(--primary-color); /* Accent border using primary color */
+    display: flex; /* Use flexbox for internal structure */
     flex-direction: column;
-    height: 100%; /* Ensure cards are same height in a row */
 }
 
-.service-card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+.feature-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
 }
 
-.service-card .service-icon {
-    font-size: 3em; /* Icon size */
-    color: var(--primary-color); /* Google Blue accent */
-    margin-bottom: 20px;
-    text-align: center;
+.feature-icon {
+    font-size: 3.2em;
+    color: var(--primary-color);
+    margin-bottom: 25px;
 }
 
-.service-card h3 {
-    font-size: 1.6em;
+.feature-block h3 {
+    font-size: 1.8em;
     color: var(--heading-color);
     margin-bottom: 15px;
-    min-height: 50px; /* Ensure consistent heading height */
 }
 
-.service-card p {
-    font-size: 0.95em;
+.feature-block p {
+    font-size: 1.05em;
     color: var(--text-color);
     line-height: 1.6;
-    margin-bottom: 20px;
-    flex-grow: 1; /* Allow description to take up available space */
+    margin-bottom: 25px;
+    flex-grow: 1; /* Allows paragraph to take up available space */
 }
 
-.service-details-list {
-    list-style: none; /* Remove default bullet points */
+.feature-list {
+    list-style: none;
     padding: 0;
-    margin-top: auto; /* Push list to the bottom of the card */
+    margin: 0;
+    margin-top: auto; /* Pushes the list to the bottom of the card */
 }
 
-.service-details-list li {
-    font-size: 0.9em;
-    color: var(--text-color);
+.feature-list li {
+    font-size: 0.95em;
+    color: #555;
     margin-bottom: 10px;
     display: flex;
-    align-items: flex-start; /* Align text with checkmark */
+    align-items: flex-start;
 }
 
-.service-details-list li i {
-    color: var(--primary-color); /* Google Blue for checkmark icons */
+.feature-list li .fa-check-circle {
+    color: var(--accent-color); /* Green checkmark using accent color */
     margin-right: 10px;
     font-size: 1.1em;
-    flex-shrink: 0; /* Prevent icon from shrinking */
-    margin-top: 3px; /* Adjust vertical alignment of checkmark */
+    margin-top: 2px;
+    flex-shrink: 0;
 }
-/* END NEW SERVICES SECTION STYLES */
+/* END OF UPDATED SERVICES SECTION STYLES */
 
 
 /* Call to Action Section */
@@ -547,16 +548,25 @@ p { margin-bottom: 1em; }
         font-size: 2em; /* Smaller for this specific section */
     }
 
-    .feature-grid, .why-us-grid, .services-grid, .phase-grid {
+    .feature-grid, .why-us-grid, .phase-grid { /* Removed .services-grid */
         grid-template-columns: 1fr; /* Stack items vertically */
     }
 
-    .service-card {
-        padding: 25px; /* Slightly less padding on small screens */
+    .service-feature-grid { /* Specific for the new services section */
+        grid-template-columns: 1fr;
+        gap: 30px; /* Slightly reduced gap for mobile */
     }
 
-    .service-card h3 {
-        min-height: auto; /* Remove fixed height on mobile */
+    .feature-block { /* Specific to the new services cards */
+        padding: 30px; /* Slightly less padding on small screens */
+    }
+
+    .feature-block h3 { /* Specific to the new services cards */
+        font-size: 1.6em;
+    }
+
+    .feature-icon { /* Specific to the new services cards */
+        font-size: 2.8em;
     }
 
     .cta-subtitle {
